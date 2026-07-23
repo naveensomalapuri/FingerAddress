@@ -49,7 +49,7 @@ dependencies {
     implementation("androidx.activity:activity-ktx:1.8.2")
 
     // Firebase BOM
-    implementation(platform("com.google.firebase:firebase-bom:34.16.0"))
+    implementation(platform("com.google.firebase:firebase-bom:32.8.1"))
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-firestore")
     implementation("com.google.firebase:firebase-auth")
