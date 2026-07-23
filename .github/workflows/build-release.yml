@@ -1,0 +1,79 @@
+name: Build & Release APK
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+    inputs:
+      release_name:
+        description: 'Release name (e.g. v1.0.0)'
+        required: false
+        default: 'manual-build'
+
+jobs:
+  build:
+    name: Build Debug APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: gradle
+
+      - name: Add google-services.json
+        run: echo '${{ secrets.GOOGLE_SERVICES_JSON }}' > app/google-services.json
+
+      - name: Grant execute permission to gradlew
+        run: chmod +x gradlew
+
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug --stacktrace
+
+      - name: Rename APK
+        run: |
+          mkdir -p release
+          cp app/build/outputs/apk/debug/app-debug.apk release/FingerAddress-${{ github.ref_name }}.apk
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: FingerAddress-APK
+          path: release/*.apk
+          retention-days: 30
+
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Finger Address ${{ github.ref_name }}
+          body: |
+            ## Finger Address App - ${{ github.ref_name }}
+
+            ### What's included
+            - Fingerprint-based profile enrollment
+            - One-tap identity verification
+            - Firebase-backed profile storage
+            - Emergency contact (call father) support
+            - Share profile info
+
+            ### How to install
+            1. Download the APK file below
+            2. On your Android phone, go to **Settings > Security > Install unknown apps** and allow your browser/file manager
+            3. Open the downloaded APK and install
+
+            ### Requirements
+            - Android 6.0 (API 23) or higher
+            - A device with a fingerprint sensor
+            - Internet connection for Firebase sync
+          files: release/*.apk
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

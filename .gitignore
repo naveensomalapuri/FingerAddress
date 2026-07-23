@@ -1,0 +1,19 @@
+# Android
+*.iml
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+*.apk
+*.aab
+
+# Google services - keep the file locally but never commit it
+# (We store it as a GitHub secret instead)
+app/google-services.json
+
+# Kotlin
+*.class

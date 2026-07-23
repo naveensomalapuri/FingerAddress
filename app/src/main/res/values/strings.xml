@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">Finger Address</string>
+    <string name="app_tagline">Helping identify and reach loved ones\nthrough secure fingerprint recognition</string>
+
+    <!-- Activity Titles -->
+    <string name="title_enroll">Enroll Profile</string>
+    <string name="title_verify">Verify Identity</string>
+    <string name="title_profile">Person Profile</string>
+
+    <!-- Home Screen -->
+    <string name="btn_enroll">Enroll My Profile</string>
+    <string name="btn_verify">Verify / Find Profile</string>
+    <string name="home_info">This app helps identify people with special needs.\nEnroll once, verify anytime using fingerprint.</string>
+
+    <!-- Enroll Screen -->
+    <string name="enroll_header">Register Your Profile</string>
+    <string name="enroll_subheader">Fill in your details and scan your fingerprint\nto securely save your profile.</string>
+    <string name="hint_full_name">Full Name</string>
+    <string name="hint_address">Home Address (House No., Street, City, State)</string>
+    <string name="hint_father_mobile">Father\'s Mobile Number</string>
+    <string name="btn_scan_fingerprint">Scan Fingerprint to Enroll</string>
+    <string name="enroll_success_title">Enrolled Successfully!</string>
+    <string name="enroll_success_message">%s has been securely registered.\nAnyone can now identify you using fingerprint.</string>
+    <string name="btn_done">Done</string>
+
+    <!-- Verify Screen -->
+    <string name="verify_instruction_title">Scan to Identify</string>
+    <string name="verify_instruction_body">Place the enrolled person\'s finger on the fingerprint sensor to view their profile and contact details.</string>
+    <string name="btn_scan_to_verify">Scan Fingerprint Now</string>
+    <string name="verify_note">Works only on the device where the person was enrolled.</string>
+
+    <!-- Fingerprint Prompts -->
+    <string name="prompt_enroll_title">Confirm Fingerprint</string>
+    <string name="prompt_enroll_subtitle">Register your fingerprint</string>
+    <string name="prompt_enroll_description">Place your finger on the sensor to link your fingerprint with your profile.</string>
+    <string name="prompt_verify_title">Identify Person</string>
+    <string name="prompt_verify_subtitle">Place finger on sensor</string>
+    <string name="prompt_verify_description">Scan the enrolled person\'s fingerprint to retrieve their contact details.</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Biometric Status -->
+    <string name="fingerprint_ready">Fingerprint sensor ready</string>
+    <string name="no_fingerprint_hardware">No fingerprint hardware found on this device.</string>
+    <string name="fingerprint_unavailable">Fingerprint sensor is currently unavailable.</string>
+    <string name="no_fingerprint_enrolled">No fingerprints registered in device settings.\nPlease add a fingerprint in Settings > Security.</string>
+    <string name="fingerprint_not_recognized">Fingerprint not recognized. Please try again.</string>
+    <string name="fingerprint_error">Fingerprint error: %s</string>
+
+    <!-- Profile Screen -->
+    <string name="label_home_address">HOME ADDRESS</string>
+    <string name="label_father_contact">FATHER\'S CONTACT</string>
+    <string name="label_address">Address</string>
+    <string name="profile_avatar">Profile picture</string>
+    <string name="verified_label">Identity Verified via Fingerprint</string>
+    <string name="btn_call_father">Call Father Now</string>
+    <string name="btn_share_profile">Share Profile Info</string>
+    <string name="share_subject">Person Profile - Finger Address</string>
+    <string name="share_profile_text">PERSON FOUND\n\nName: %1$s\nHome Address: %2$s\nFather\'s Mobile: %3$s\n\nSent via Finger Address App</string>
+    <string name="share_via">Share via</string>
+
+    <!-- Errors -->
+    <string name="error_name_required">Please enter full name</string>
+    <string name="error_address_required">Please enter home address</string>
+    <string name="error_mobile_required">Please enter father\'s mobile number</string>
+    <string name="error_mobile_invalid">Please enter a valid mobile number (min 10 digits)</string>
+    <string name="error_no_device_id">Unable to identify device. Please try again.</string>
+    <string name="error_profile_parse">Error reading profile data.</string>
+    <string name="error_no_profile_found">No profile found for this device.\nPlease enroll first using the Enroll option.</string>
+    <string name="error_load_failed">Failed to load profile: %s</string>
+    <string name="save_failed">Failed to save profile: %s</string>
+    <string name="error_label">Error</string>
+    <string name="success">Success</string>
+    <string name="btn_go_back">Go Back</string>
+</resources>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="32dp">
+
+    <!-- Fingerprint Animation / Icon -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginBottom="32dp"
+        app:cardBackgroundColor="@color/primary_light"
+        app:cardCornerRadius="80dp"
+        app:cardElevation="8dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_fingerprint_large"
+            android:contentDescription="@string/title_verify"
+            app:tint="@color/primary" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/verify_instruction_title"
+        android:textColor="@color/text_primary"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/verify_instruction_body"
+        android:textColor="@color/text_secondary"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:lineSpacingMultiplier="1.4"
+        android:layout_marginBottom="48dp"
+        android:paddingHorizontal="8dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnScanToVerify"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:text="@string/btn_scan_to_verify"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/secondary"
+        app:cornerRadius="16dp"
+        app:icon="@drawable/ic_fingerprint_small"
+        app:iconGravity="textStart"
+        app:iconSize="26dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/verify_note"
+        android:textColor="@color/text_hint"
+        android:textSize="13sp"
+        android:gravity="center" />
+
+</LinearLayout>
